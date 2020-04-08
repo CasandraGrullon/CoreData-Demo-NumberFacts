@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Posts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreData_Demo_NumberFacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PostViewController" customModule="CoreData_Demo_NumberFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,22 +55,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="I9A-ZW-Lkc">
+                    <navigationItem key="navigationItem" title="Posts" id="I9A-ZW-Lkc">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="zt8-g0-vvf">
                             <connections>
                                 <segue destination="K6x-XD-PF2" kind="presentation" id="cfW-F8-dmk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="vCx-9Q-tmR" id="gVu-fb-PZi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1584" y="-90"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Create Post Controller-->
         <scene sceneID="Wc4-FQ-gSA">
             <objects>
-                <tableViewController id="K6x-XD-PF2" sceneMemberID="viewController">
+                <tableViewController id="K6x-XD-PF2" customClass="CreatePostController" customModule="CoreData_Demo_NumberFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Efk-rw-uyg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,6 +155,9 @@
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Submit"/>
+                                                    <connections>
+                                                        <action selector="submitButtonPressed:" destination="K6x-XD-PF2" eventType="touchUpInside" id="iy9-qg-Zb4"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -168,6 +174,11 @@
                             <outlet property="delegate" destination="K6x-XD-PF2" id="U2s-L7-iG3"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="numberFactTextfield" destination="srg-7U-en2" id="t7l-N0-AyE"/>
+                        <outlet property="pickerView" destination="Hcd-t5-KgP" id="f56-82-Qfw"/>
+                        <outlet property="postTitleTextfield" destination="lA3-16-Va9" id="w1h-JG-WiZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MWc-gl-puZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,6 +190,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xTF-QE-Buc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OnE-CK-r2m">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -191,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Users-->
         <scene sceneID="sN9-9d-lL9">
             <objects>
-                <viewController id="Y38-Fw-Hn4" sceneMemberID="viewController">
+                <viewController id="Y38-Fw-Hn4" customClass="UsersViewController" customModule="CoreData_Demo_NumberFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oGH-ze-XLl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,22 +235,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hSg-nk-lqg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kSb-2Z-Q62">
+                    <navigationItem key="navigationItem" title="Users" id="kSb-2Z-Q62">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="AeX-NV-w3b">
                             <connections>
                                 <segue destination="3vI-0k-Pd7" kind="presentation" id="oZS-dy-XrG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="YXQ-Bq-va2" id="Yoh-4H-4Ta"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfJ-EU-P6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1583" y="554"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Create User View Controller-->
         <scene sceneID="weH-It-BO6">
             <objects>
-                <tableViewController id="3vI-0k-Pd7" sceneMemberID="viewController">
+                <tableViewController id="3vI-0k-Pd7" customClass="CreateUserViewController" customModule="CoreData_Demo_NumberFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="p0M-RR-pgD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -274,8 +289,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EwE-Vf-SGB">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="EwE-Vf-SGB">
                                                     <rect key="frame" x="20" y="42" width="374" height="216"/>
+                                                    <date key="minimumDate" timeIntervalSinceReferenceDate="-1454331600">
+                                                        <!--1954-12-01 11:00:00 +0000-->
+                                                    </date>
+                                                    <date key="maximumDate" timeIntervalSinceReferenceDate="608032800">
+                                                        <!--2020-04-08 10:00:00 +0000-->
+                                                    </date>
+                                                    <connections>
+                                                        <action selector="datePicked:" destination="3vI-0k-Pd7" eventType="valueChanged" id="Ill-bS-Nau"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -299,6 +323,9 @@
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Submit"/>
+                                                    <connections>
+                                                        <action selector="submitButtonPressed:" destination="3vI-0k-Pd7" eventType="touchUpInside" id="ZK2-xK-c90"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -315,6 +342,9 @@
                             <outlet property="delegate" destination="3vI-0k-Pd7" id="qBa-n6-5ib"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="enterNameTextfield" destination="6L1-fa-tch" id="JF3-2e-TiX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0It-9c-FCj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

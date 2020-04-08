@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		C691BACE243E379000C87BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C691BACD243E379000C87BFB /* AppDelegate.swift */; };
 		C691BAD0243E379000C87BFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C691BACF243E379000C87BFB /* SceneDelegate.swift */; };
-		C691BAD2243E379000C87BFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C691BAD1243E379000C87BFB /* ViewController.swift */; };
+		C691BAD2243E379000C87BFB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C691BAD1243E379000C87BFB /* PostViewController.swift */; };
 		C691BAD5243E379000C87BFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C691BAD3243E379000C87BFB /* Main.storyboard */; };
 		C691BAD8243E379000C87BFB /* CoreData_Demo_NumberFacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C691BAD6243E379000C87BFB /* CoreData_Demo_NumberFacts.xcdatamodeld */; };
 		C691BADA243E379100C87BFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C691BAD9243E379100C87BFB /* Assets.xcassets */; };
 		C691BADD243E379100C87BFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C691BADB243E379100C87BFB /* LaunchScreen.storyboard */; };
+		C6951B3F243E43460018F1DF /* CreatePostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6951B3E243E43460018F1DF /* CreatePostController.swift */; };
+		C6951B41243E43B50018F1DF /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6951B40243E43B50018F1DF /* CreateUserViewController.swift */; };
+		C6951B43243E43CA0018F1DF /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6951B42243E43CA0018F1DF /* UsersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C691BACA243E379000C87BFB /* CoreData-Demo-NumberFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData-Demo-NumberFacts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C691BACD243E379000C87BFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C691BACF243E379000C87BFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C691BAD1243E379000C87BFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C691BAD1243E379000C87BFB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C691BAD4243E379000C87BFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C691BAD7243E379000C87BFB /* CoreData_Demo_NumberFacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData_Demo_NumberFacts.xcdatamodel; sourceTree = "<group>"; };
 		C691BAD9243E379100C87BFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C691BADC243E379100C87BFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C691BADE243E379100C87BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6951B3E243E43460018F1DF /* CreatePostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostController.swift; sourceTree = "<group>"; };
+		C6951B40243E43B50018F1DF /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		C6951B42243E43CA0018F1DF /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +66,7 @@
 			children = (
 				C691BACD243E379000C87BFB /* AppDelegate.swift */,
 				C691BACF243E379000C87BFB /* SceneDelegate.swift */,
-				C691BAD1243E379000C87BFB /* ViewController.swift */,
+				C6951B3D243E43230018F1DF /* Controllers */,
 				C691BAD3243E379000C87BFB /* Main.storyboard */,
 				C691BAD9243E379100C87BFB /* Assets.xcassets */,
 				C691BADB243E379100C87BFB /* LaunchScreen.storyboard */,
@@ -68,6 +74,17 @@
 				C691BAD6243E379000C87BFB /* CoreData_Demo_NumberFacts.xcdatamodeld */,
 			);
 			path = "CoreData-Demo-NumberFacts";
+			sourceTree = "<group>";
+		};
+		C6951B3D243E43230018F1DF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C691BAD1243E379000C87BFB /* PostViewController.swift */,
+				C6951B3E243E43460018F1DF /* CreatePostController.swift */,
+				C6951B42243E43CA0018F1DF /* UsersViewController.swift */,
+				C6951B40243E43B50018F1DF /* CreateUserViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C691BAD2243E379000C87BFB /* ViewController.swift in Sources */,
+				C691BAD2243E379000C87BFB /* PostViewController.swift in Sources */,
+				C6951B3F243E43460018F1DF /* CreatePostController.swift in Sources */,
 				C691BACE243E379000C87BFB /* AppDelegate.swift in Sources */,
+				C6951B43243E43CA0018F1DF /* UsersViewController.swift in Sources */,
 				C691BAD8243E379000C87BFB /* CoreData_Demo_NumberFacts.xcdatamodeld in Sources */,
 				C691BAD0243E379000C87BFB /* SceneDelegate.swift in Sources */,
+				C6951B41243E43B50018F1DF /* CreateUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
