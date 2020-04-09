@@ -54,8 +54,8 @@ extension PostViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
         let post = posts[indexPath.row]
-        cell.textLabel?.text = post.title
-        cell.detailTextLabel?.text = post.number.description
+        cell.textLabel?.text = "\(post.title ?? "")\t\(post.number)"
+        cell.detailTextLabel?.text = "by: \(post.user?.name ?? "")"
         return cell
     }
     
