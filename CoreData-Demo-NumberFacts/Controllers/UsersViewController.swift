@@ -21,7 +21,9 @@ class UsersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        fetchUsers()
     }
+    
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -34,6 +36,9 @@ class UsersViewController: UIViewController {
             }
             createUserVC.delegate = self
         }
+    }
+    private func fetchUsers() {
+        users = CoreDataManager.shared.fetchUsers()
     }
 
     
