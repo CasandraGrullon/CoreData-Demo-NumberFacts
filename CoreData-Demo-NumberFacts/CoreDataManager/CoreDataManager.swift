@@ -54,9 +54,53 @@ class CoreDataManager {
     public func updateUser() {
         
     }
+    @discardableResult // silences the warnings if returned value is not used
+    public func deleteUser(_ user: User) -> Bool {
+        var wasDeleted = false
+        context.delete(user)
+        do {
+            try context.save()
+            wasDeleted = true
+        } catch {
+            print("failed to delete user: \(error.localizedDescription)")
+        }
+        return wasDeleted
+    }
     
-    public func deleteUser() {
+    public func createPost(for user: User, number: Double, title: String) -> Post {
+        let post = Post(entity: Post.entity(), insertInto: context)
+        post.title = title
+        post.number = number
+        post.user = user
         
+        do {
+            try context.save()
+        } catch {
+            print("error creating post: \(error.localizedDescription)")
+        }
+        return post
+    }
+    public func fetchPosts() -> [Post] {
+        do {
+            posts = try context.fetch(Post.fetchRequest())
+        } catch {
+            print("error fetching posts: \(error.localizedDescription)")
+        }
+        return posts
+    }
+    @discardableResult
+    public func deletePost(_ post: Post) -> Bool {
+        var wasDeleted = false
+        context.delete(post)
+        
+        //save changes
+        do {
+            try context.save()
+            wasDeleted = true
+        } catch {
+            print("failed to delete post: \(error.localizedDescription)")
+        }
+        return wasDeleted
     }
     
 }

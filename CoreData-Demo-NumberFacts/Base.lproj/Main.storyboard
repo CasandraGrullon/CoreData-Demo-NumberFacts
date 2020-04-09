@@ -58,7 +58,7 @@
                     <navigationItem key="navigationItem" title="Posts" id="I9A-ZW-Lkc">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="zt8-g0-vvf">
                             <connections>
-                                <segue destination="K6x-XD-PF2" kind="presentation" id="cfW-F8-dmk"/>
+                                <segue destination="K6x-XD-PF2" kind="presentation" identifier="createPostSegue" id="cfW-F8-dmk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
