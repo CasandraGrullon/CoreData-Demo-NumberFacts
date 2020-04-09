@@ -215,12 +215,28 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="W1h-em-ToW">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" textLabel="hur-y6-hxN" detailTextLabel="pX4-ZE-5JT" style="IBUITableViewCellStyleSubtitle" id="W1h-em-ToW">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W1h-em-ToW" id="ui4-kE-rZc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hur-y6-hxN">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pX4-ZE-5JT">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -238,7 +254,7 @@
                     <navigationItem key="navigationItem" title="Users" id="kSb-2Z-Q62">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="AeX-NV-w3b">
                             <connections>
-                                <segue destination="3vI-0k-Pd7" kind="presentation" id="oZS-dy-XrG"/>
+                                <segue destination="3vI-0k-Pd7" kind="presentation" identifier="createUserSegue" id="oZS-dy-XrG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -259,10 +275,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
-                            <tableViewSection id="iAW-w3-csM">
+                            <tableViewSection headerTitle="Create Profile" id="iAW-w3-csM">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="q0V-cg-5wz">
-                                        <rect key="frame" x="0.0" y="18" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q0V-cg-5wz" id="ISD-wr-EjS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -283,7 +299,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="300" id="s6Z-Be-i2E">
-                                        <rect key="frame" x="0.0" y="61.5" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="99" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s6Z-Be-i2E" id="w2I-do-dcp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -297,9 +313,6 @@
                                                     <date key="maximumDate" timeIntervalSinceReferenceDate="608032800">
                                                         <!--2020-04-08 10:00:00 +0000-->
                                                     </date>
-                                                    <connections>
-                                                        <action selector="datePicked:" destination="3vI-0k-Pd7" eventType="valueChanged" id="Ill-bS-Nau"/>
-                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -311,7 +324,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="du2-4F-u16">
-                                        <rect key="frame" x="0.0" y="361.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="399" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="du2-4F-u16" id="cSk-Co-Kp0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -343,6 +356,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="datePicker" destination="EwE-Vf-SGB" id="vcK-1p-zzz"/>
                         <outlet property="enterNameTextfield" destination="6L1-fa-tch" id="JF3-2e-TiX"/>
                     </connections>
                 </tableViewController>
@@ -354,7 +368,7 @@
         <scene sceneID="KZ2-zm-MqS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LhY-7R-3lQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Posts" id="pT6-A9-EiJ"/>
+                    <tabBarItem key="tabBarItem" title="Posts" image="doc.plaintext" catalog="system" id="pT6-A9-EiJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ge5-8q-DHW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -373,7 +387,7 @@
         <scene sceneID="MAO-j2-TEQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mnz-8y-GSR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" id="8oo-QG-0kD"/>
+                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" id="8oo-QG-0kD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aPB-dc-pq6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -390,6 +404,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="doc.plaintext" catalog="system" width="115" height="128"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>
